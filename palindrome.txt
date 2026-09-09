@@ -1,0 +1,29 @@
+def palindrome(s):
+    queue = []
+
+   
+    for ch in s:
+        if ch.isalnum():
+            queue.append(ch.lower())
+
+   
+    cleaned = ''.join(queue)
+    print("After removing special characters:", cleaned)
+
+   
+    while len(queue) > 1:
+        first = queue.pop(0)
+        last = queue.pop()
+
+        if first != last:
+            return False
+
+    return True
+
+
+s = input("Enter a string: ")
+
+if palindrome(s):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
